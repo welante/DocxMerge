@@ -10,10 +10,10 @@
     */
     namespace DocxMerge\libraries;
 
-    define('TBSZIP_DOWNLOAD',1);   // download (default)
-    define('TBSZIP_NOHEADER',4);   // option to use with DOWNLOAD: no header is sent
-    define('TBSZIP_FILE',8);       // output to file  , or add from file
-    define('TBSZIP_STRING',32);    // output to string, or add from string
+    if (!defined('TBSZIP_DOWNLOAD')) define('TBSZIP_DOWNLOAD',1);   // download (default)
+    if (!defined('TBSZIP_NOHEADER')) define('TBSZIP_NOHEADER',4);   // option to use with DOWNLOAD: no header is sent
+    if (!defined('TBSZIP_FILE')) define('TBSZIP_FILE',8);       // output to file  , or add from file
+    if (!defined('TBSZIP_STRING')) define('TBSZIP_STRING',32);    // output to string, or add from string
 
     class TbsZip {
 
