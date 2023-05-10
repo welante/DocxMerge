@@ -183,7 +183,7 @@ class Docx {
     }
 
     public function findAndReplaceFirst( $key, $value ) {
-        // Search/Replace first key in document                
+        // Search/Replace first key in document
         if ( strpos( $this->docxDocument, $key ) === FALSE ) return;
         if ( strpos( $this->docxDocument, $key ) + strlen( $key ) === FALSE ) return;
 
@@ -213,6 +213,7 @@ class Docx {
         // Replace current file with tempFile content
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
             copy( $tempFile, $this->docxPath );
+            unlink($tempFile);
         }
         else {
             rename($tempFile, $this->docxPath);
@@ -248,7 +249,7 @@ class Docx {
 
             // insert new rows
             $this->docxDocument = substr_replace( $this->docxDocument, $result, $trEndPos, 0 );
-        }        
+        }
     }
 
     public function prepare() {
@@ -256,4 +257,4 @@ class Docx {
         $this->docxDocument = $prettify->removeTags( $this->docxDocument );
     }
 
-} 
+}
