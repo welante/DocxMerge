@@ -15,6 +15,7 @@
     if (!defined('TBSZIP_FILE')) define('TBSZIP_FILE',8);       // output to file  , or add from file
     if (!defined('TBSZIP_STRING')) define('TBSZIP_STRING',32);    // output to string, or add from string
 
+    #[\AllowDynamicProperties]
     class TbsZip {
 
         function __construct() {
